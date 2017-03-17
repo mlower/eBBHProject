@@ -1,0 +1,11 @@
+Action items:
+
+    Determine the minimum eccentricity that Advanced LIGO can detect for a system like GW150914 at 410 Mpc:
+        1. See if anyone has already calculated this.
+        2. Take a look at this code: ~ethrane/papers/projection/python/test_LALSimIMRPhenomP.py
+            2.1 Generate own waveforms
+            2.2 make plots of time domain and frequency domain
+        3. Look into approximants for eccentric waveforms.
+        4. Calculate matched filter residuals for no-eccentricity vs eccentricity using Eqs. 2-3 in this paper.
+            4.1 Use MonashGWTools repository for this. Paul, please give Marcus access to the git repo.
+        5. See how the sensitivity to eccentricity varies with distance.
