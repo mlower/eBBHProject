@@ -17,8 +17,8 @@ import matplotlib.pyplot as plt
 m1 = 9.1*u.Msun
 m2 = 8.2*u.Msun
 
-Rs1 = (2*c.G*m1)/(c.c**2)
-Rs2 = (2*c.G*m2)/(c.c**2)
+Rs1 = ((2*c.G*m1)/(c.c**2)).si.value
+Rs2 = ((2*c.G*m2)/(c.c**2)).si.value
 
 P = 1.*u.day
 
@@ -56,27 +56,25 @@ GWfreq = 2/(Period)
 
 time_year = (time * u.s).to('yr').value
 
-f1 = plt.figure()
+f1 = plt.figure(1)
 ax1 = f1.add_subplot(111)
 ax1.loglog(time_year,O[:,0],color='red')
-plt.title('BBH semi-major axis decay')
+plt.title('eBBH semi-major axis decay')
 plt.xlabel('Time [years]')
 plt.ylabel(r'Semi-Major Axis [m]')
 plt.xlim(1e7,max(time_year))
 plt.ylim(1e8,1e10)
-plt.show()
 
-f2 = plt.figure()
+f2 = plt.figure(2)
 ax2 = f2.add_subplot(111)
 ax2.semilogx(time_year,O[:,1],color='blue')
-plt.title('BBH eccentricity decay')
+plt.title('eBBH eccentricity decay')
 plt.xlabel('Time [years]')
 plt.ylabel(r'Eccentricity')
 plt.xlim(1e7,max(time_year))
 plt.ylim(1e-7,1)
-plt.show()
 
-f3 = plt.figure()
+f3 = plt.figure(3)
 ax3 = f3.add_subplot(111)
 ax3.loglog(GWfreq,O[:,1],color='blue')
 plt.title('eBBH eccentricity vs GW frequency')
@@ -84,4 +82,5 @@ plt.xlabel('GW frequency [Hz]')
 plt.ylabel(r'Eccentricity')
 plt.xlim(2,4000)
 plt.ylim(1e-7,1)
-plt.show()
+
+plt.show(1); plt.show(2); plt.show(3)
